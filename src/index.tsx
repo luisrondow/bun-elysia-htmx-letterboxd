@@ -9,7 +9,7 @@ new Elysia()
   .get("/", () => <Counter count={count} />)
   .post("/count", () => {
     count++;
-    return <Counter count={count} />;
+    return count;
   })
   .listen(3030);
 

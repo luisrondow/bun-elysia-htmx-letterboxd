@@ -7,15 +7,18 @@ type CounterProps = {
 export default function Counter({ count }: CounterProps) {
   return (
     <HomeLayout>
-      <div class="flex flex-col items-center">
-        Count is {count}
+      <>
+        <div id="content" class="flex flex-col items-center">
+          Count is <span>{count}</span>
+        </div>
         <button
           class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           hx-post="/count"
+          hx-target="#content span"
         >
           Increment
         </button>
-      </div>
+      </>
     </HomeLayout>
   );
 }
